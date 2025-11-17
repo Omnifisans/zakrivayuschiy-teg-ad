@@ -1,48 +1,47 @@
-/* Опишите в этом файле все keyframes для проекта и стили анимаций иконки Like.
+:root {
+  --font: 'Inter-Variable';
+  --font-accent: 'PressStart2P-Regular';
 
-Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
-✦ theme-dark — класс тёмной темы
-✦ theme-light — класс светлой темы
-✦ like-icon — для svg-иконки анимированного сердца
-✦ card__like-button — для кнопки Like рядом с иконкой
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
-✦ button__text — для обозначения текстового элемента внутри кнопки
+  --main-font-size: 1.125rem;
+  --accent-font-size: 0.875rem;
+  
+  --floppy-size: 21px;
+  --modal-padding-inline: 30px;
 
-Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
-*/
+  --card-inline-size: clamp(min(100%, 375px), 50vw, 700px);
+  
+  --main-color: #000;
+  --bg-color: #fff;
+  --heart-hover: #000;
+  --button-text-color: #fff;
 
+  --card-font-weight: 400;
+  --card-title-font-weight: 700;
 
-@keyframes triangle-move {
-  from {
-    transform: translateX(0px);
-  }
-  to {
-    transform: translateX(4px);
-  }
+  --bg-image: repeating-linear-gradient(
+      to right, 
+      #d3d3d3 0,
+      #d3d3d3 2px,
+      transparent 2px,
+      transparent 4px
+    ), 
+    repeating-linear-gradient(
+      to bottom, 
+      #d3d3d3 0,
+      #d3d3d3 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    linear-gradient(
+      to bottom,
+      #e7e7e7 0.01%,
+      #1a1a1a
+    );
 }
 
-@keyframes heart-scale {
-  from {
-    scale: 1;
-  }
-  50% {
-    scale: 1.5;
-  }
-  100% {
-    scale: 1;
-  }
-}
-
-@keyframes heart-sparks {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
+@media (width <= 375px) {
+  :root {
+    --floppy-size: 28px;
+    --modal-padding-inline: 40px;
   }
 }
