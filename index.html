@@ -2,17 +2,80 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Закрывающий тег</title>
-    <link rel="stylesheet" href="./fonts/fonts.css" />
-    <link rel="stylesheet" href="./styles/variables.css" />
-    <link rel="stylesheet" href="./styles/globals.css" />
+    <link rel="icon" href="./images/wrong-favicon.ico" sizes="any">
+    <link rel="icon" href="./images/wrong-favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="./styles/style.css" />
-    <link rel="stylesheet" href="./styles/animations.css" />
+    <link rel="stylesheet" href="./styles/wrong-path/variables.css" />
+    <link rel="stylesheet" href="./styles/globals.css" />
   </head>
-  <body class="page">
-    <header class="header"></header>
-    <main></main>
-    <script src="./scripts/like.js"></script>
+  <body>
+    <header>
+      <div>
+        <a href="#0">&lt;/HTML&gt;</a>
+        <h1>Закрывающий тег</h1>
+        <nav>
+          <ul>
+            <li>
+              <button type="button" data-theme="wrong-theme">
+                Темно
+              </button>
+            </li>
+            <li>
+              <button type="button" data-theme="auto">
+                Авто
+              </button>
+            </li>
+            <li>
+              <button type="button">
+                Светло
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <article>
+        <h2>Фритрек и нулевой спринт: Подготовка к работе</h2>
+        <div>
+          <img src="./images/expectations-d.jpg" alt="Ожидания">
+          <p>Ожидания</p>
+        </div>
+        <div>
+          <p>Это было самое начало пути...</p>
+          <p>Большие ожидания...</p>
+          <div>
+            <button type="button">
+              <svg viewBox="0 0 39 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 6H9V9H12V6ZM15 6H12V9H15V6Z" fill="black"/>
+              </svg>
+            </button>
+            <button type="button">
+              <span>Like</span>
+            </button>
+          </div>
+        </div>
+      </article>
+    </main>
+    <footer>
+      <button type="button">
+        <svg>
+          <use href="./svg/wrong-floppy.svg#floppy"></use>
+        </svg>
+        <span>
+          Сохранить на память
+        </span>
+      </button>
+    </footer>
+    <dialog id="dialog">
+      <svg>
+        <use href="./svg/floppy.svg#floppy"></use>
+      </svg>
+      <h2>Вставьте дискету, чтобы продолжить</h2>
+      <button type="button">
+        <span>Ок</span>
+      </button>
+    </dialog>
   </body>
 </html>
