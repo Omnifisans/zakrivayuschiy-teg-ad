@@ -38,3 +38,10 @@
       #1a1a1a
     );
 }
+
+@media (width <= 375px) {
+  :root {
+    --floppy-size: 28px;
+    --modal-padding-inline: 40px;
+  }
+}
