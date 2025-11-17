@@ -1,0 +1,11 @@
+:root.theme-light {
+  --main-color: black;
+  --bg-color: white;
+  
+  --bg-image: linear-gradient(white, gray);
+}
+
+:root.theme-dark {
+  --main-color: green;
+  --bg-color: black;
+}
