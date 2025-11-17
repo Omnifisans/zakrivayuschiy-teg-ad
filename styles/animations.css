@@ -1,17 +1,32 @@
 @keyframes triangle-move {
   from {
-    transform: translateX(0);
+    transform: translateX(0px);
   }
   to {
-    transform: translateX(10px);
+    transform: translateX(4px);
   }
 }
 
 @keyframes heart-scale {
   from {
-    transform: scale(1);
+    scale: 1;
   }
-  to {
-    transform: scale(2);
+  50% {
+    scale: 1.5;
+  }
+  100% {
+    scale: 1;
+  }
+}
+
+@keyframes heart-sparks {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
