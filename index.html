@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="color-scheme" content="light dark">
     <title>Закрывающий тег</title>
-    <link rel="icon" href="./images/favicon.ico" sizes="any">
+    <!-- ОШИБКА 1: Отсутствует favicon.ico -->
     <link rel="icon" href="./images/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="./images/favicon.png">
     <link rel="stylesheet" href="./fonts/fonts.css" />
     <link rel="stylesheet" href="./styles/variables.css" />
     <link rel="stylesheet" href="./styles/globals.css" />
     <link rel="stylesheet" href="./styles/style.css" />
-    <link rel="stylesheet" href="./styles/animations.css" />
+    <!-- ОШИБКА 2: Отсутствует animations.css -->
     <link rel="stylesheet" href="./styles/themes.css" />
-    <script src="./scripts/set-theme.js"></script>
+    <!-- ОШИБКА 3: Отсутствует set-theme.js -->
   </head>
   <body class="page">
     <header class="header">
@@ -24,7 +24,13 @@
         <nav class="theme-menu header__theme-menu">
           <ul class="theme-menu__list">
             <li class="theme-menu__item">
-              <button type="button" data-theme="auto" class="theme-menu__button">
+              <!-- ОШИБКА 4: Неправильное значение data-theme -->
+              <button type="button" data-theme="black" class="theme-menu__button">
+                Темно
+              </button>
+            </li>
+            <li class="theme-menu__item">
+              <button type="button" data-theme="auto" disabled class="theme-menu__button">
                 Авто
               </button>
             </li>
@@ -42,10 +48,9 @@
         <h2 class="article__title">Фритрек и нулевой спринт: Подготовка к работе</h2>
         <div class="article__img-wrapper">
           <picture>
-            <source type="image/avif" media="width <= 375px" srcset="./images/expectations-m.avif">
+            <source type="image/avif" media="(width <= 375px)" srcset="./images/expectations-m.avif">
             <source type="image/avif" srcset="./images/expectations-d.avif">
-            <source type="image/webp" media="(width <= 375px)" srcset="./images/expectations-m.webp">
-            <source type="image/webp" srcset="./images/expectations-d.webp">
+            <!-- ОШИБКА 5: Отсутствует source для webp -->
             <img class="article__img" src="./images/expectations-d.jpg" alt="Ожидания большие за дверью" loading="lazy">
           </picture>
           <p class="article__img-label">Ожидания</p>
