@@ -1,11 +1,61 @@
 :root.theme-light {
-  --main-color: black;
-  --bg-color: white;
-  
-  --bg-image: linear-gradient(white, gray);
+  --main-color: #000;
+  --bg-color: #fff;
+  --heart-hover: #000;
+  --button-text-color: #fff;
+ 
+  --card-font-weight: 400;
+  --card-title-font-weight: 700;
+
+  --bg-image: 
+      repeating-linear-gradient(
+        to right, 
+        #d3d3d3 0,
+        #d3d3d3 2px,
+        transparent 2px,
+        transparent 4px
+      ), 
+      repeating-linear-gradient(
+        to bottom, 
+        #d3d3d3 0,
+        #d3d3d3 2px,
+        transparent 2px,
+        transparent 4px
+      ),
+      linear-gradient(
+        to bottom,
+        #e7e7e7 0.01%,
+        #1a1a1a
+      );
 }
 
 :root.theme-dark {
-  --main-color: green;
-  --bg-color: black;
+  --main-color: #00CC14;
+  --bg-color: #000;
+  --heart-hover: #00CC14;
+  --button-text-color: #00CC14;
+  
+  --card-font-weight: 465;
+  --card-title-font-weight: 785;
+
+  --bg-image: 
+      repeating-linear-gradient(
+        to right, 
+        #000 0,
+        #000 2px,
+        transparent 2px,
+        transparent 4px
+      ), 
+      repeating-linear-gradient(
+        to bottom, 
+        #000 0,
+        #000 2px,
+        transparent 2px,
+        transparent 4px
+      ),
+      linear-gradient(
+        to bottom,
+        #007f0c 0.01%,
+        #004306
+      );
 }
