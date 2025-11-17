@@ -1,45 +1,45 @@
 /* Этот скрипт использует имена классов theme-menu__button, theme-dark, theme-light и theme-auto;
 еще атрибуты disabled и data-theme. Поэтому их нельзя менять в HTML. */
 
-function changeTheme(theme) {
+function applyTheme(theme) {
   document.documentElement.className = '';
   document.documentElement.classList.add(`theme-${theme}`);
   localStorage.setItem('theme', theme);
 }
 
-(function initTheme() {
-  const theme = localStorage.getItem('theme');
-  if (theme) {
-    changeTheme(theme);
+(function initializeTheme() {
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme) {
+    applyTheme(savedTheme);
   }
 })();
 
 document.addEventListener('DOMContentLoaded', () => {
-  const root = document.documentElement;
+  const rootElement = document.documentElement;
   const themeButtons = document.querySelectorAll('.theme-menu__button');
 
-  function setDisabled(theme) {
-    themeButtons.forEach((item) => {
-      if (item.getAttribute('data-theme') === theme) {
-        item.setAttribute('disabled', true);
+  function updateDisabledState(theme) {
+    themeButtons.forEach((button) => {
+      if (button.getAttribute('data-theme') === theme) {
+        button.setAttribute('disabled', true);
       } else {
-        item.removeAttribute('disabled');
+        button.removeAttribute('disabled');
       }
     });
   }
 
-  if ([...root.classList].includes('theme-light')) {
-    setDisabled('light');
-  } else if ([...root.classList].includes('theme-dark')) {
-    setDisabled('dark');
+  if (rootElement.classList.contains('theme-light')) {
+    updateDisabledState('light');
+  } else if (rootElement.classList.contains('theme-dark')) {
+    updateDisabledState('dark');
   } else {
-    setDisabled('auto');
+    updateDisabledState('auto');
   }
 
   themeButtons.forEach((button) => {
     button.onclick = () => {
-      changeTheme(button.getAttribute('data-theme'));
-      setDisabled(button.getAttribute('data-theme'));
+      applyTheme(button.getAttribute('data-theme'));
+      updateDisabledState(button.getAttribute('data-theme'));
     };
   });
 });
