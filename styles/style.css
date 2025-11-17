@@ -176,7 +176,6 @@
   block-size: 100%;
 }
 
-
 .article__img--blur {
   filter: blur(4px);
 }
@@ -204,7 +203,6 @@
 .article__img--sepia {
   filter: sepia(1);
 }
-
 
 .article__img-label {
   position: absolute;
