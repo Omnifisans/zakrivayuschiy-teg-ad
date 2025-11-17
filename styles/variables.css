@@ -1,1 +1,14 @@
-/* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  --font: 'Arial';
+  --font-accent: 'Courier New';
+  
+  --main-font-size: 16px;
+  --accent-font-size: 12px;
+  
+  --card-inline-size: 100%;
+  
+  --main-color: black;
+  --bg-color: white;
+  
+  --bg-image: linear-gradient(white, gray);
+}
