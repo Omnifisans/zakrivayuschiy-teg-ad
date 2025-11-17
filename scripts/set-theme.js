@@ -1,6 +1,6 @@
 function changeTheme(theme) {
   document.documentElement.className = '';
-  document.documentElement.classList.add(theme);
+  document.documentElement.classList.add(`theme-${theme}`);
   localStorage.setItem('theme', theme);
 }
 
@@ -18,14 +18,20 @@ document.addEventListener('DOMContentLoaded', () => {
   function setDisabled(theme) {
     themeButtons.forEach((item) => {
       if (item.getAttribute('data-theme') === theme) {
-        item.disabled = true;
+        item.setAttribute('disabled', true);
       } else {
-        item.disabled = false;
+        item.removeAttribute('disabled');
       }
     });
   }
 
-  setDisabled('auto');
+  if ([...root.classList].includes('theme-light')) {
+    setDisabled('light');
+  } else if ([...root.classList].includes('theme-dark')) {
+    setDisabled('dark');
+  } else {
+    setDisabled('auto');
+  }
 
   themeButtons.forEach((button) => {
     button.onclick = () => {
