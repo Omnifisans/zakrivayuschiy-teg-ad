@@ -5,6 +5,7 @@
   background-color: var(--bg-color, #fff);
   background-image: var(--bg-image);
   background-size: cover;
+  background-attachment: fixed;
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-variation-settings: 'wght' var(--card-font-weight, 400);
@@ -26,6 +27,7 @@
   border: 2px solid var(--main-color, #000);
   padding-block: clamp(120px, 10vw, 136px) 23px;
   font-family: var(--font-accent, 'Courier New', monospace);
+  text-transform: uppercase;
   background-color: var(--bg-color, #fff);
 }
 
@@ -57,6 +59,7 @@
   border: none;
   padding: 0;
   font-size: var(--accent-font-size, 0.875rem);
+  text-transform: inherit;
   background-color: transparent;
   transition-duration: 0.3s;
   transition-timing-function: ease;
@@ -126,6 +129,7 @@
   font-weight: 700;
   font-size: var(--main-font-size, 1.125rem);
   line-height: normal;
+  font-variation-settings: 'wght' var(--card-title-font-weight, 700);
 }
 
 .article__body {
@@ -163,6 +167,7 @@
   color: var(--main-color, #000);
   font-family: var(--font-accent, 'Courier New', monospace);
   font-size: var(--accent-font-size, 0.875rem);
+  text-transform: uppercase;
   text-shadow:
     -1px 0 var(--bg-color, #fff), 
     0 1px var(--bg-color, #fff), 
@@ -171,6 +176,14 @@
   inset-block-start: 23px;
   inset-inline-end: min(3%, 25px);
   mix-blend-mode: hard-light;
+}
+
+@supports ((text-stroke: 1px var(--bg-color)) or (-webkit-text-stroke: 1px var(--bg-color))) {
+  .article__img-label {
+    text-shadow: none;
+    -webkit-text-stroke: 1px var(--bg-color, #fff);
+    text-stroke: 1px var(--bg-color, #fff);
+  }
 }
 
 .card__button-wrapper {
@@ -342,6 +355,7 @@
 
 .modal__button {
   grid-column: 1 / -1;
+  text-transform: uppercase;
   inline-size: 100%;
 }
 
@@ -368,6 +382,7 @@
   font-family: var(--font-accent, 'Courier New', monospace);
   font-size: var(--accent-font-size, 0.875rem);
   line-height: 1.5;
+  text-transform: uppercase;
   background-color: var(--bg-color, #fff);
   max-inline-size: 357px;
 }
