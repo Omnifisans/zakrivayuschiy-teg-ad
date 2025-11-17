@@ -24,12 +24,7 @@
         <nav class="theme-menu header__theme-menu">
           <ul class="theme-menu__list">
             <li class="theme-menu__item">
-              <button type="button" class="theme-menu__button">
-                Темно
-              </button>
-            </li>
-            <li class="theme-menu__item">
-              <button type="button" data-theme="auto" disabled class="theme-menu__button">
+              <button type="button" data-theme="auto" class="theme-menu__button">
                 Авто
               </button>
             </li>
@@ -47,8 +42,10 @@
         <h2 class="article__title">Фритрек и нулевой спринт: Подготовка к работе</h2>
         <div class="article__img-wrapper">
           <picture>
-            <source type="image/avif" media="(max-width: 375px)" srcset="./images/expectations-m.avif">
+            <source type="image/avif" media="width <= 375px" srcset="./images/expectations-m.avif">
             <source type="image/avif" srcset="./images/expectations-d.avif">
+            <source type="image/webp" media="(width <= 375px)" srcset="./images/expectations-m.webp">
+            <source type="image/webp" srcset="./images/expectations-d.webp">
             <img class="article__img" src="./images/expectations-d.jpg" alt="Ожидания большие за дверью" loading="lazy">
           </picture>
           <p class="article__img-label">Ожидания</p>
