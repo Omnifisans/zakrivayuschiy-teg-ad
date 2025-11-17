@@ -5,7 +5,6 @@
   background-color: var(--bg-color, #fff);
   background-image: var(--bg-image);
   background-size: cover;
-  background-attachment: fixed;
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-variation-settings: 'wght' var(--card-font-weight, 400);
@@ -27,7 +26,6 @@
   border: 2px solid var(--main-color, #000);
   padding-block: clamp(120px, 10vw, 136px) 23px;
   font-family: var(--font-accent, 'Courier New', monospace);
-  text-transform: uppercase;
   background-color: var(--bg-color, #fff);
 }
 
@@ -59,11 +57,62 @@
   border: none;
   padding: 0;
   font-size: var(--accent-font-size, 0.875rem);
-  text-transform: inherit;
   background-color: transparent;
   transition-duration: 0.3s;
   transition-timing-function: ease;
   cursor: pointer;
+}
+
+.theme-menu__button::before {
+  content: "▶";
+  position: absolute;
+  opacity: 0;
+  transform: translateX(0px);
+  animation-name: triangle-move;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  inset-inline-start: -20px;
+  inset-block-start: 0;
+  animation-duration: 0.5s;
+}
+
+.theme-menu__button[disabled]::before {
+  opacity: 0.6;
+}
+
+.theme-menu__button[disabled] {
+  opacity: 0.6;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+  pointer-events: none;
+}
+
+.theme-menu__button:hover {
+  opacity: 0.6;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+}
+
+.theme-menu__button::after {
+  content: "";
+  position: relative;
+  display: block;
+  background-color: var(--main-color, #000);
+  transition-duration: 0.3s;
+  transform: scaleX(0);
+  transform-origin: left center;
+  block-size: 2px;
+}
+
+.theme-menu__button:focus {
+  outline: none;
+  opacity: 0.6;
+}
+
+.theme-menu__button:focus-visible::after {
+  transition-duration: 0.3s;
+  transform: scaleX(1);
 }
 
 .article {
@@ -77,7 +126,6 @@
   font-weight: 700;
   font-size: var(--main-font-size, 1.125rem);
   line-height: normal;
-  font-variation-settings: 'wght' var(--card-title-font-weight, 700);
 }
 
 .article__body {
@@ -115,7 +163,6 @@
   color: var(--main-color, #000);
   font-family: var(--font-accent, 'Courier New', monospace);
   font-size: var(--accent-font-size, 0.875rem);
-  text-transform: uppercase;
   text-shadow:
     -1px 0 var(--bg-color, #fff), 
     0 1px var(--bg-color, #fff), 
@@ -141,12 +188,130 @@
   cursor: pointer;
 }
 
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  border: 2px solid var(--main-color, #000);
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+}
+
+.sparks {
+  opacity: 0;
+}
+
+.contour {
+  fill: var(--heart-hover, #000);
+  transition-duration: 0.1s;
+}
+
+.core {
+  fill: transparent;
+  transition-delay: 0.03s;
+  transition-duration: 0.3s;
+}
+
+.like-icon {
+  width: 39px;
+  height: 36px;
+}
+
+.like-icon:hover .core {
+  fill: var(--heart-hover, #000);
+  transition-delay: 0s;
+  transition-duration: 0.3s;
+}
+
+.like-icon:active .core {
+  fill: #FF0000;
+  transition-delay: 0s;
+  transition-duration: 0.3s;
+}
+
+.main-body {
+  fill: transparent;
+  transition-delay: 0s;
+  transition-duration: 0.3s;
+}
+
+.like-icon:hover .main-body {
+  fill: var(--heart-hover, #000);
+  transition-delay: 0.05s;
+  transition-duration: 0.3s;
+}
+
+.like-icon:active .main-body {
+  fill: #FF0000;
+  transition-delay: 0.05s;
+  transition-duration: 0.3s;
+}
+
+.like-icon.is-liked .core {
+  fill: #FF0000;
+  transition-delay: 0s;
+  transition-duration: 0.3s;
+}
+
+.like-icon.is-liked .main-body {
+  fill: #FF0000;
+  transition-delay: 0.05s;
+  transition-duration: 0.3s;
+}
+
+.like-icon.is-liked .contour {
+  fill: #FF0000;
+  transition-delay: 0.06s;
+  transition-duration: 0.3s;
+}
+
+.like-icon.is-liked .sparks {
+  animation-name: heart-sparks;
+  animation-delay: 0.3s;
+  animation-timing-function: ease-in;
+  animation-duration: 0.3s;
+}
+
+.is-liked .heart {
+  transform-origin: center;
+  animation-name: heart-scale;
+  animation-delay: 0.1s;
+  animation-direction: alternate;
+  animation-timing-function: ease-in;
+  animation-duration: 0.3s;
+}
+
 .button {
   position: relative;
   border: 2px solid var(--main-color, #000);
   padding: 0;
   background-color: var(--bg-color, #fff);
   cursor: pointer;
+}
+
+.button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--main-color, #000);
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+
+.button:hover::after {
+  transform: scale(1);
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  box-shadow: 2px 2px 0 0 var(--main-color, #000);
+  transition-duration: 0.3s;
 }
 
 .button__text {
@@ -157,6 +322,27 @@
   font-size: var(--accent-font-size, 0.875rem);
   line-height: 0.9;
   mix-blend-mode: difference;
+}
+
+.save-button {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin: 0 auto;
+  padding: 15px 20px;
+  max-inline-size: 83vw;
+}
+
+.card__like-button {
+  inline-size: 130px;
+  block-size: 38px;
+}
+
+.modal__button {
+  grid-column: 1 / -1;
+  inline-size: 100%;
 }
 
 .footer {
@@ -172,13 +358,29 @@
   mix-blend-mode: difference;
 }
 
-.modal {
+.modal[open] {
+  display: grid;
+  grid-template-columns: auto auto;
+  row-gap: 30px;
+  column-gap: clamp(12px, 2vw, 20px);
   padding: var(--modal-padding-inline, 30px) 30px;
   color: var(--main-color, #000);
   font-family: var(--font-accent, 'Courier New', monospace);
   font-size: var(--accent-font-size, 0.875rem);
   line-height: 1.5;
-  text-transform: uppercase;
   background-color: var(--bg-color, #fff);
   max-inline-size: 357px;
+}
+
+.modal__title {
+  font-size: var(--accent-font-size, 0.875rem);
+  line-height: 1.5;
+}
+
+.floppy--modal {
+  --floppy-size: 38px;
+}
+
+.modal::backdrop {
+  background-color: rgb(0 0 0 / 0.75);
 }
