@@ -1,16 +1,108 @@
-/* Здесь вы напишете основную часть стилей страницы.
+* {
+  box-sizing: border-box;
+}
 
-Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
-✦ like-icon — для svg-иконки анимированного сердца
-✦ card__like-button — для кнопки Like рядом с иконкой
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
-✦ button__text — для обозначения текстового элемента внутри кнопки
-
-*/
+body {
+  margin: 0;
+}
 
 .page {
-  min-inline-size: 320px;
-  min-block-size: 100dvb;
+  color: black;
+  font-family: Arial, sans-serif;
+  background-color: white;
+}
+
+.header {
+  padding: 100px 0;
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.header__container {
+  display: flex;
+  border: 2px solid black;
+}
+
+.header__logo {
+  margin-bottom: 20px;
+  font-size: 3rem;
+}
+
+.header__title {
+  margin-bottom: 25px;
+  font-size: 1rem;
+}
+
+.theme-menu__list {
+  display: flex;
+  gap: 10px;
+}
+
+.theme-menu__button {
+  border: none;
+  background: none;
+}
+
+.article {
+  border: 1px solid black;
+}
+
+.article__title {
+  padding: 10px;
+  font-weight: bold;
+}
+
+.article__img-wrapper {
+  position: relative;
+}
+
+.article__img {
+  width: 100%;
+  height: auto;
+}
+
+.article__img-label {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: black;
+}
+
+.article__body {
+  padding: 20px;
+}
+
+.article__text {
+  margin-bottom: 20px;
+}
+
+.card__button-wrapper {
+  display: flex;
+}
+
+.card__icon-button {
+  border: none;
+  background: none;
+}
+
+.button {
+  border: 1px solid black;
+  background: white;
+}
+
+.button__text {
+  color: black;
+}
+
+.save-button {
+  display: flex;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.modal {
+  padding: 20px;
 }
