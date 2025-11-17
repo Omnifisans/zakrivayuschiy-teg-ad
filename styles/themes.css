@@ -59,3 +59,37 @@
         #004306
       );
 }
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --main-color: #00CC14;
+    --bg-color: #000;
+    --heart-hover: #00CC14;
+    --button-text-color: #00CC14;
+    
+    --card-font-weight: 465;
+    --card-title-font-weight: 785;
+
+    --bg-image: 
+      repeating-linear-gradient(
+        to right, 
+        #000 0,
+        #000 2px,
+        transparent 2px,
+        transparent 4px
+      ), 
+      repeating-linear-gradient(
+        to bottom, 
+        #000 0,
+        #000 2px,
+        transparent 2px,
+        transparent 4px
+      ),
+      linear-gradient(
+        to bottom,
+        #007f0c 0.01%,
+        #004306
+      );
+  }
+}
