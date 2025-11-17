@@ -2,32 +2,35 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Закрывающий тег</title>
-    <link rel="icon" href="./images/wrong-favicon.ico" sizes="any">
-    <link rel="icon" href="./images/wrong-favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="./images/favicon.ico" sizes="any">
     <link rel="stylesheet" href="./styles/style.css" />
-    <link rel="stylesheet" href="./styles/wrong-path/variables.css" />
+    <link rel="stylesheet" href="./styles/variables.css" />
     <link rel="stylesheet" href="./styles/globals.css" />
+    <link rel="stylesheet" href="./styles/animations.css" />
+    <link rel="stylesheet" href="./styles/themes.css" />
+    <script src="./scripts/set-theme.js"></script>
   </head>
-  <body>
-    <header>
-      <div>
-        <a href="#0">&lt;/HTML&gt;</a>
-        <h1>Закрывающий тег</h1>
-        <nav>
-          <ul>
-            <li>
-              <button type="button" data-theme="wrong-theme">
+  <body class="page">
+    <header class="header">
+      <div class="container header__container">
+        <a class="header__logo" href="#0">&lt;/HTML&gt;</a>
+        <h1 class="header__title">Закрывающий тег</h1>
+        <nav class="theme-menu header__theme-menu">
+          <ul class="theme-menu__list">
+            <li class="theme-menu__item">
+              <button type="button" data-theme-color="dark" class="theme-menu__button">
                 Темно
               </button>
             </li>
-            <li>
-              <button type="button" data-theme="auto">
+            <li class="theme-menu__item">
+              <button type="button" data-theme="auto" disabled class="theme-menu__button">
                 Авто
               </button>
             </li>
-            <li>
-              <button type="button">
+            <li class="theme-menu__item">
+              <button type="button" data-theme="light" class="theme-menu__button">
                 Светло
               </button>
             </li>
@@ -35,23 +38,23 @@
         </nav>
       </div>
     </header>
-    <main>
-      <article>
-        <h2>Фритрек и нулевой спринт: Подготовка к работе</h2>
-        <div>
-          <img src="./images/expectations-d.jpg" alt="Ожидания">
-          <p>Ожидания</p>
+    <main class="main container main__container">
+      <article class="article">
+        <h2 class="article__title">Фритрек и нулевой спринт: Подготовка к работе</h2>
+        <div class="article__img-wrapper">
+          <img class="article__img" src="./images/expectations-d.jpg" alt="Ожидания большие за дверью" loading="lazy">
+          <p class="article__img-label">Ожидания</p>
         </div>
-        <div>
-          <p>Это было самое начало пути...</p>
-          <p>Большие ожидания...</p>
-          <div>
-            <button type="button">
-              <svg viewBox="0 0 39 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 6H9V9H12V6ZM15 6H12V9H15V6Z" fill="black"/>
+        <div class="article__body">
+          <p class="article__text">Это было самое начало пути. На этом этапе важно было проникнуться основами и настроиться на учёбу.</p>
+          <p class="article__opinion">Большие ожидания. Не терпится приступить.</p>
+          <div class="card__button-wrapper">
+            <button class="card__icon-button" type="button">
+              <svg class="like-icon" viewBox="0 0 39 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="contour" d="M12 6H9V9H12V6ZM15 6H12V9H15V6ZM9 9H6V12H9V9Z" fill="var(--heart-contour)"/>
               </svg>
             </button>
-            <button type="button">
+            <button class="button" type="button">
               <span>Like</span>
             </button>
           </div>
@@ -59,9 +62,9 @@
       </article>
     </main>
     <footer>
-      <button type="button">
-        <svg>
-          <use href="./svg/wrong-floppy.svg#floppy"></use>
+      <button class="button" type="button" onclick="window['dialog'].showModal()" aria-controls="dialog"> 
+        <svg class="floppy">
+          <use href="./svg/floppy.svg#floppy"></use>
         </svg>
         <span>
           Сохранить на память
@@ -69,13 +72,14 @@
       </button>
     </footer>
     <dialog id="dialog">
-      <svg>
+      <svg class="floppy">
         <use href="./svg/floppy.svg#floppy"></use>
       </svg>
       <h2>Вставьте дискету, чтобы продолжить</h2>
-      <button type="button">
-        <span>Ок</span>
+      <button type="button" class="button" onclick="window['dialog'].close()">
+        <span>Ок</span>          
       </button>
     </dialog>
+    <script src="./scripts/like.js"></script>
   </body>
 </html>
