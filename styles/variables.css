@@ -1,14 +1,40 @@
 :root {
-  --font: 'Arial';
-  --font-accent: 'Courier New';
+  --font: 'Inter-Variable';
+  --font-accent: 'PressStart2P-Regular';
+
+  --main-font-size: 1.125rem;
+  --accent-font-size: 0.875rem;
   
-  --main-font-size: 16px;
-  --accent-font-size: 12px;
+  --floppy-size: 21px;
+  --modal-padding-inline: 30px;
+
+  --card-inline-size: clamp(min(100%, 375px), 50vw, 700px);
   
-  --card-inline-size: 100%;
-  
-  --main-color: black;
-  --bg-color: white;
-  
-  --bg-image: linear-gradient(white, gray);
+  --main-color: #000;
+  --bg-color: #fff;
+  --heart-hover: #000;
+  --button-text-color: #fff;
+
+  --card-font-weight: 400;
+  --card-title-font-weight: 700;
+
+  --bg-image: repeating-linear-gradient(
+      to right, 
+      #d3d3d3 0,
+      #d3d3d3 2px,
+      transparent 2px,
+      transparent 4px
+    ), 
+    repeating-linear-gradient(
+      to bottom, 
+      #d3d3d3 0,
+      #d3d3d3 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    linear-gradient(
+      to bottom,
+      #e7e7e7 0.01%,
+      #1a1a1a
+    );
 }
