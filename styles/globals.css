@@ -2,14 +2,16 @@
 Здесь же лежит утилитарный класс visually-hidden на случай, если нужно скрыть какой-то элемент, но оставить доступным для скринридера.
 Вы можете изменять этот файл или дополнять. Но скорее всего, вам это не потребуется. */
 
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  font-variation-settings: "wght" var(--main-text-weight);
+}
+
 *,
 *::after,
 *::before {
   box-sizing: border-box;
-}
-
-body {
-  margin: 0;
 }
 
 h1,
