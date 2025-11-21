@@ -1,47 +1,49 @@
 :root {
-  --font: 'Inter-Variable';
-  --font-accent: 'PressStart2P-Regular';
+  --font-family-main: 'Inter';
+  --font-family-accent: 'PressStart2P';
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+  --font-weight-title: 785;
+  --font-size-title: 18px;
+  --font-size-text: 18px;
+  --font-weight-text: 400;
 
-  --main-font-size: 1.125rem;
-  --accent-font-size: 0.875rem;
-  
-  --floppy-size: 21px;
-  --modal-padding-inline: 30px;
+  --color-text: #000;
+  --color-background: #fff;
+  --color-border: #000;
+  --color-button-text: #000;
+  --color-accent: #000;
+  --color-label-stroke: var(--color-background, #ffffff);
 
-  --card-inline-size: clamp(min(100%, 375px), 50vw, 700px);
-  
-  --main-color: #000;
-  --bg-color: #fff;
-  --heart-hover: #000;
-  --button-text-color: #fff;
+  --width-content: clamp(23.1875rem, 16.035rem + 30.516vw, 43.75rem);
+  --padding-inner: 0 clamp(1.25rem, 0.852rem + 1.696vw, 2.5rem);
+  --width-header: clamp(23.438rem, 16.285rem + 30.516vw, 43.75rem);
+  --padding-header: clamp(7.5rem, 7.1479rem + 1.5023vw, 8rem) clamp(0.875rem, -5.0626rem + 25.333vw, 7.531rem);
 
-  --card-font-weight: 400;
-  --card-title-font-weight: 700;
+  --background-image-page:
+    repeating-linear-gradient(90deg, #d3d3d3 0 2px, transparent 2px 4px),
+    repeating-linear-gradient(180deg, #d3d3d3 0 2px, transparent 2px 4px),
+    linear-gradient(180deg, #e7e7e7 0%, #e7e7e7 0.01%, #1a1a1a 100%);
+  --background-color-page: #fff;
 
-  --bg-image: repeating-linear-gradient(
-      to right, 
-      #d3d3d3 0,
-      #d3d3d3 2px,
-      transparent 2px,
-      transparent 4px
-    ), 
-    repeating-linear-gradient(
-      to bottom, 
-      #d3d3d3 0,
-      #d3d3d3 2px,
-      transparent 2px,
-      transparent 4px
-    ),
-    linear-gradient(
-      to bottom,
-      #e7e7e7 0.01%,
-      #1a1a1a
-    );
-}
+  --transition-smooth: 0.3s ease;
+  --transition-fast: 0.2s ease;
+  --transition-function: ease;
+  --animation-time-transform: 0.3s;
 
-@media (width <= 375px) {
-  :root {
-    --floppy-size: 28px;
-    --modal-padding-inline: 40px;
-  }
+  --border-width: 2px;
+  --border-width-button: 2px;
+
+  --color-like-contour: var(--color-text, #000000);
+  --color-like-main-body: none;
+  --color-like-core: #000;
+  --color-like-sparks: #ff0000;
+  --color-like-core-active: #000;
+  --color-like-main-body-active: #000;
+  --color-like-contour-active: #000;
+  --color-like-contour-liked: #FF0000;
+  --color-like-sparks-active: #FF0000;
+  --color-like-core-transparent: none;
+  --color-like-main-body-transparent: none;
+  --color-like-sparks-transparent: #FF0000;
 }
