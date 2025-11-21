@@ -26,7 +26,7 @@
   <!-- ... -->
 
   <section class="save__section">
-    <button type="button" class="button save__button" id="saveButton">
+    <button type="button" class="button save__button">
       <svg class="button__icon" viewBox="0 0 29 28">
         <use href="svg/floppy.svg#floppy"/>
       </svg>
@@ -34,13 +34,13 @@
     </button>
   </section>
   
-  <dialog class="dialog" id="dialog">
+  <dialog class="dialog">
     <svg class="dialog__icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39 39">
       <use href="svg/floppy.svg#floppy"/>
     </svg>
     <p class="dialog__text">Вставьте дискету, чтобы продолжить</p>
-    <form class="dialog__controller" method="dialog">
-      <button type="submit" class="button dialog__button">
+    <form method="dialog">
+      <button class="button dialog__button">
         <span class="button__text">ок</span>
       </button>
     </form>
@@ -49,28 +49,12 @@
 
 <script src="./scripts/like.js"></script>
 <script>
-  // Обработчики для диалогового окна
-  document.addEventListener('DOMContentLoaded', function() {
-    const saveButton = document.getElementById('saveButton');
-    const dialog = document.getElementById('dialog');
-    
-    // Открытие диалога
-    saveButton.addEventListener('click', function() {
-      dialog.showModal();
-    });
-    
-    // Закрытие диалога при клике вне его области
-    dialog.addEventListener('click', function(event) {
-      const dialogDimensions = dialog.getBoundingClientRect();
-      if (
-        event.clientX < dialogDimensions.left ||
-        event.clientX > dialogDimensions.right ||
-        event.clientY < dialogDimensions.top ||
-        event.clientY > dialogDimensions.bottom
-      ) {
-        dialog.close();
-      }
-    });
+  // Простое решение для Яндекс.Практикума
+  const dialog = document.querySelector('.dialog');
+  const saveButton = document.querySelector('.save__button');
+  
+  saveButton.addEventListener('click', () => {
+    dialog.showModal();
   });
 </script>
 </body>
