@@ -14,6 +14,19 @@
 */
 
 /* Основные стили страницы */
+/* Здесь вы напишете основную часть стилей страницы.
+
+Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
+✦ like-icon — для svg-иконки анимированного сердца
+✦ card__like-button — для кнопки Like рядом с иконкой
+✦ card__icon-button — для кнопки, оборачивающей иконку
+✦ card__icon-button — для кнопки, оборачивающей иконку
+✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
+✦ button__text — для обозначения текстового элемента внутри кнопки
+
+*/
+
+/* Основные стили страницы */
 .page {
   min-inline-size: 375px;
   min-block-size: 100dvb;
@@ -111,7 +124,10 @@
   top: 25px;
 }
 
-@supports (text-stroke: 1px var(--color-label-stroke)) {
+@supports (
+  (-webkit-text-stroke: 1px var(--color-label-stroke)) or
+  (text-stroke: 1px var(--color-label-stroke))
+) {
   .card__img-label {
     text-shadow: none;
     -webkit-text-stroke: 1px var(--color-label-stroke);
@@ -146,6 +162,10 @@
 
 .section:nth-child(8) .section__image {
   filter: hue-rotate(90deg) opacity(0.7) blur(2px);
+}
+
+.section:nth-child(9) .section__image {
+  filter: contrast(2);
 }
 
 /* Стили текстового содержимого */
