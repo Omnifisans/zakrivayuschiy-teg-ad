@@ -8,34 +8,34 @@
 Если эти классы поменять в HTML, скрипт перестанет работать. Будьте аккуратны.
 */
 
-const likeHeartArray = document.querySelectorAll('.like-icon');
-const likeButtonArray = document.querySelectorAll('.card__like-button');
-const iconButtonArray = document.querySelectorAll('.card__icon-button');
+const heartIcons = Array.from(document.querySelectorAll('.like-icon'));
+const likeButtons = Array.from(document.querySelectorAll('.card__like-button'));
+const iconButtons = Array.from(document.querySelectorAll('.card__icon-button'));
 
-iconButtonArray.forEach((iconButton, index) => {
-  iconButton.onclick = () =>
-    toggleIsLiked(likeHeartArray[index], likeButtonArray[index]);
-});
-
-likeButtonArray.forEach((button, index) => {
-  button.onclick = () => toggleIsLiked(likeHeartArray[index], button);
-});
-
-function toggleIsLiked(heart, button) {
-  heart.classList.toggle('is-liked');
-  setButtonText(heart, button);
-}
-
-function setButtonText(heart, button) {
-  if ([...heart.classList].includes('is-liked')) {
-    setTimeout(
-      () => (button.querySelector('.button__text').textContent = 'Unlike'),
-      500
-    );
+function handleLikeState(heartElement, buttonElement) {
+  const isLiked = heartElement.classList.contains('is-liked');
+  
+  if (isLiked) {
+    heartElement.classList.remove('is-liked');
+    setTimeout(() => {
+      buttonElement.querySelector('.button__text').textContent = 'Like';
+    }, 500);
   } else {
-    setTimeout(
-      () => (button.querySelector('.button__text').textContent = 'Like'),
-      500
-    );
+    heartElement.classList.add('is-liked');
+    setTimeout(() => {
+      buttonElement.querySelector('.button__text').textContent = 'Unlike';
+    }, 500);
   }
 }
+
+iconButtons.forEach((iconBtn, i) => {
+  iconBtn.addEventListener('click', () => {
+    handleLikeState(heartIcons[i], likeButtons[i]);
+  });
+});
+
+likeButtons.forEach((likeBtn, i) => {
+  likeBtn.addEventListener('click', () => {
+    handleLikeState(heartIcons[i], likeBtn);
+  });
+});
