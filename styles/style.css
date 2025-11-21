@@ -27,6 +27,7 @@
 */
 
 /* Основные стили страницы */
+/* Основные стили страницы */
 .page {
   min-inline-size: 375px;
   min-block-size: 100dvb;
@@ -36,7 +37,6 @@
   background-attachment: fixed;
 }
 
-/* Стили заголовка */
 .header {
   display: flex;
   flex-direction: column;
@@ -70,7 +70,6 @@
   text-align: center;
 }
 
-/* Стили секций/карточек */
 .main__content {
   display: flex;
   flex-direction: column;
@@ -96,7 +95,6 @@
   z-index: 10;
 }
 
-/* Стили изображений */
 .section__image {
   width: 100%;
   border: var(--border-width) solid var(--color-border);
@@ -135,40 +133,35 @@
   }
 }
 
-/* Фильтры для изображений в разных секциях */
+/* Фильтры для изображений в разных секциях - 7 разных фильтров */
 .section:nth-child(2) .section__image {
-  filter: grayscale(0.5);
+  filter: grayscale(0.8);
 }
 
 .section:nth-child(3) .section__image {
-  filter: saturate(4.5);
+  filter: saturate(3);
 }
 
 .section:nth-child(4) .section__image {
-  filter: hue-rotate(50deg);
+  filter: hue-rotate(90deg);
 }
 
 .section:nth-child(5) .section__image {
-  filter: invert(1) brightness(0.9);
+  filter: invert(0.8);
 }
 
 .section:nth-child(6) .section__image {
-  filter: sepia(1);
+  filter: sepia(0.7);
 }
 
 .section:nth-child(7) .section__image {
-  filter: blur(5px);
+  filter: blur(3px);
 }
 
 .section:nth-child(8) .section__image {
-  filter: hue-rotate(90deg) opacity(0.7) blur(2px);
+  filter: contrast(2) brightness(1.2);
 }
 
-.section:nth-child(9) .section__image {
-  filter: contrast(2);
-}
-
-/* Стили текстового содержимого */
 .block__text {
   display: flex;
   flex-direction: column;
@@ -183,7 +176,6 @@
   line-height: 21px;
 }
 
-/* Стили кнопок */
 .button__block {
   display: flex;
   flex-direction: row;
@@ -192,7 +184,6 @@
   padding: 0 25px 25px clamp(11.0625rem, 10.169rem + 3.811vw, 31.375rem);
 }
 
-/* Стили кнопок лайков */
 .card__icon-button {
   display: flex;
   align-items: center;
@@ -232,7 +223,6 @@
   cursor: pointer;
 }
 
-/* Стили общей кнопки сохранения */
 .save__button {
   position: relative;
   overflow: hidden;
@@ -266,7 +256,6 @@
   z-index: 1;
 }
 
-/* Стили модального окна */
 .dialog {
   display: grid;
   grid-template-areas:
@@ -282,7 +271,6 @@
   background: var(--background-color-page);
   max-inline-size: 355px;
   padding: 30px;
-
   opacity: 0;
   visibility: hidden;
   transition: opacity var(--transition-smooth), visibility var(--transition-smooth);
@@ -333,7 +321,6 @@
   padding: 10px 17px;
 }
 
-/* Общие эффекты наведения и фокуса */
 .card__like-button:focus,
 .save__button:focus,
 .dialog__button:focus {
@@ -372,7 +359,6 @@
   color: var(--background-color-page);
 }
 
-/* Адаптивные стили */
 @media (width < 380px) {
   .save__button {
     flex-direction: column;
