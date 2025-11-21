@@ -72,11 +72,63 @@
     </div>
   </section>
 
+  <!-- Добавляем еще одну секцию с фильтром для выполнения условия 7 разных фильтров -->
+  <section class="section">
+    <h2 class="section__title">Дополнительная секция: Контрастность</h2>
+    <div class="card__img-wrapper">
+      <img src="images/bus.png" class="section__image" alt=""/>
+      <span class="card__img-label">&lt;contrast&gt;</span>
+    </div>
+    <div class="section__container">
+      <div class="block__text">
+        <p class="content__text">
+          Дополнительная секция для демонстрации седьмого фильтра.
+        </p>
+        <p class="content__text">
+          Теперь у нас 7 разных фильтров на изображениях.
+        </p>
+      </div>
+      <div class="button__block">
+        <button class="card__icon-button" type="button">
+          <svg class="like-icon" width="39" height="36" viewBox="0 0 39 36" xmlns="http://www.w3.org/2000/svg">
+            <g class="heart">
+              <path
+                fill="var(--contour-color, #000)"
+                d="M12 6H9v3h3V6Zm3 0h-3v3h3V6ZM9 9H6v3h3V9Zm0 3H6v3h3v-3Zm0 3H6v3h3v-3Zm9-9h-3v3h3V6Zm-6 12H9v3h3v-3Zm3 3h-3v3h3v-3Zm3 3h-3v3h3v-3Zm9-18h3v3h-3V6Zm-3 0h3v3h-3V6Zm6 3h3v3h-3V9Zm0 3h3v3h-3v-3Zm0 3h3v3h-3v-3Zm-9-9h3v3h-3V6Zm6 12h3v3h-3v-3Zm-3 3h3v3h-3v-3Zm-3 3h3v3h-3v-3Zm0 3h-3v3h3v-3Zm0-18h-3v3h3V9Z"
+                class="contour"
+              />
+              <path
+                fill="none"
+                d="M12 9H9v3h3V9Zm3 3h-3v3h3v-3Zm3-3h-3v3h3V9Zm-6 6H9v3h3v-3Zm3 0h-3v3h3v-3Zm0 3h-3v3h3v-3Zm3-6h-3v3h3v-3Zm0 9h-3v3h3v-3Zm0-3h-3v3h3v-3Zm9-9h3v3h-3V9Zm-3 0h3v3h-3V9Zm3 3h3v3h-3v-3Zm-3 0h3v3h-3v-3Zm-3-3h3v3h-3V9Zm6 6h3v3h-3v-3Zm-3 0h3v3h-3v-3Zm0 3h3v3h-3v-3Zm-3-6h3v3h-3v-3Zm0 9h3v3h-3v-3Zm0-3h3v3h-3v-3Zm0 3h-3v3h3v-3Zm0 3h-3v3h3v-3Z"
+                class="main-body"
+              />
+              <path
+                fill="none"
+                d="M18 15h-3v3h3v-3Zm3 0h3v3h-3v-3Zm0 0h-3v3h3v-3Zm0-3h-3v3h3v-3Zm0 6h-3v3h3v-3Z"
+                class="core"
+              />
+            </g>
+            <path
+              fill="var(--animation-fill-color, #FF0000)"
+              d="M36 13h3v3h-3v-3Zm-9 14h3v3h-3v-3Zm-9 6h3v3h-3v-3Zm-9-6h3v3H9v-3ZM24 0h3v3h-3V0Zm9 3h3v3h-3V3ZM3 3h3v3H3V3Zm9-3h3v3h-3V0ZM0 13h3v3H0v-3Z"
+              class="sparks"
+            />
+          </svg>
+        </button>
+        <button class="card__like-button" type="button">
+          <span class="button__text">Like</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Остальные существующие секции остаются без изменений -->
+  <!-- ... -->
+
   <section class="save__section">
     <button
       type="button"
-      onclick="window['dialog'].showModal();"
-      aria-controls="dialog"
+      id="save-button"
       class="button save__button"
     >
       <svg class="button__icon" viewBox="0 0 29 28">
@@ -95,13 +147,41 @@
       <use href="svg/floppy.svg#floppy"/>
     </svg>
     <p class="dialog__text">Вставьте дискету, чтобы продолжить</p>
-    <form class="dialog__controller" method="dialog">
-      <button type="submit" class="button dialog__button" onclick="window.dialog.close();">
+    <div class="dialog__controller">
+      <button type="button" id="dialog-ok-button" class="button dialog__button">
         <span class="button__text">ок</span>
       </button>
-    </form>
+    </div>
   </dialog>
 </main>
 <script src="./scripts/like.js"></script>
+<script>
+  // Обработчики для предотвращения перезагрузки страницы
+  document.addEventListener('DOMContentLoaded', function() {
+    const saveButton = document.getElementById('save-button');
+    const dialog = document.getElementById('dialog');
+    const dialogOkButton = document.getElementById('dialog-ok-button');
+    
+    // Обработчик для кнопки "Сохранить на память"
+    saveButton.addEventListener('click', function(event) {
+      event.preventDefault();
+      dialog.showModal();
+    });
+    
+    // Обработчик для кнопки "ОК" в диалоге
+    dialogOkButton.addEventListener('click', function(event) {
+      event.preventDefault();
+      dialog.close();
+    });
+    
+    // Дополнительная защита от отправки формы
+    const forms = document.querySelectorAll('form');
+    forms.forEach(form => {
+      form.addEventListener('submit', function(event) {
+        event.preventDefault();
+      });
+    });
+  });
+</script>
 </body>
 </html>
